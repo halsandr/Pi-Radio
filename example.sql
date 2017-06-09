@@ -40,14 +40,14 @@ CREATE TABLE IF NOT EXISTS `radio_stations` (
 --
 
 INSERT INTO `radio_stations` (`id`, `playing`, `pretty_name`, `url`) VALUES
-(1, 0, 'Absolute Radio', 'http://aacplus-ar-128.timlradio.co.uk/'),
+(1, 0, 'Absolute Radio', 'http://aacplus-ar-32.timlradio.co.uk/'),
 (2, 0, 'Classical FM', 'http://media-ice.musicradio.com/ClassicFMMP3'),
-(3, 0, 'Absolute Classic Rock', 'http://aacplus-ac-128.timlradio.co.uk/'),
-(4, 0, 'Absolute 80s', 'http://aacplus-a8-128.timlradio.co.uk/'),
-(5, 0, 'Absolute 60s', 'http://aacplus-a6-128.timlradio.co.uk/'),
-(6, 0, 'Absolute 70s', 'http://aacplus-a7-128.timlradio.co.uk/'),
-(7, 0, 'Absolute 90s', 'http://aacplus-a9-128.timlradio.co.uk/'),
-(8, 0, 'Absolute 00s', 'http://aacplus-a0-128.timlradio.co.uk/');
+(3, 0, 'Absolute Classic Rock', 'http://aacplus-ac-32.timlradio.co.uk/'),
+(4, 0, 'Absolute 80s', 'http://aacplus-a8-32.timlradio.co.uk/'),
+(5, 0, 'Absolute 60s', 'http://aacplus-a6-32.timlradio.co.uk/'),
+(6, 0, 'Absolute 70s', 'http://aacplus-a7-32.timlradio.co.uk/'),
+(7, 0, 'Absolute 90s', 'http://aacplus-a9-32.timlradio.co.uk/'),
+(8, 0, 'Absolute 00s', 'http://aacplus-a0-32.timlradio.co.uk/');
 
 --
 -- Indexes for dumped tables
