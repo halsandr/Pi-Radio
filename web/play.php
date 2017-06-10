@@ -17,8 +17,10 @@ if ($conn->connect_error) {
 } 
 
 $sql2 = "UPDATE `radio_stations` SET `playing`=0 WHERE `playing`=1;";
-$sql2 .= "UPDATE `radio_stations` SET `playing`=1 WHERE `id`=" . $_POST['station'];
-mysqli_multi_query($conn, $sql2);
+$sql3 = "UPDATE `radio_stations` SET `playing`=1 WHERE `id`=" . $_POST['station'];
+//mysqli_multi_query($conn, $sql2);
+$conn->query($sql2);
+$conn->query($sql3);
 
 $sql = "SELECT `url` FROM `radio_stations` WHERE `id`=" . $_POST['station'];
 $result = $conn->query($sql);
