@@ -16,19 +16,21 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql2 = "UPDATE `radio_stations` SET `playing`=0 WHERE `playing`=1;";
-$sql3 = "UPDATE `radio_stations` SET `playing`=1 WHERE `id`=" . $_POST['station'];
-//mysqli_multi_query($conn, $sql2);
-$conn->query($sql2);
-$conn->query($sql3);
+$sql = "SELECT `url` FROM `radio_stations` WHERE `id`=" . $_POST['station'] . ";";
+$sql .= "UPDATE `radio_stations` SET `playing`=0 WHERE `playing`=1;";
+$sql .= "UPDATE `radio_stations` SET `playing`=1 WHERE `id`=" . $_POST['station'] . ";";
 
-$sql = "SELECT `url` FROM `radio_stations` WHERE `id`=" . $_POST['station'];
-$result = $conn->query($sql);
-
-if ($result->num_rows == 1) {
-    while($row = $result->fetch_assoc()) {
-        shell_exec('sudo /home/pi/pifm/scripts/radio_player.sh ' . $row["url"]);
+if ($conn->multi_query($sql)) {
+    /* store first result set */
+    if ($result = $conn->store_result()) {
+        while ($row = $result->fetch_row()) {
+            shell_exec('sudo /home/pi/pifm/scripts/radio_player.sh ' . $row[0]);
+        }
+        $result->free();
     }
 }
+
+/* close connection */
+$conn->close();
 
 ?>
