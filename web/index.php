@@ -52,7 +52,7 @@ $result = $conn->query($sql);
                         <button class="btn btn-default pull-right button-stop" type="button">
                         <i class="fa fa-stop"></i>
                     </button>
-                        <button onclick="playRadio(<?php echo $row[" id "] ;?>)" class="player btn btn-<?php if($row[" playing "]){echo "success ";}else{echo "default ";} ?> pull-right" type="button">
+                        <button onclick="playRadio(<?php echo $row["id"] ;?>)" class="player btn btn-<?php if($row["playing"]){echo "success ";}else{echo "default ";} ?> pull-right" type="button">
                         <i class="fa fa-play"></i>
                     </button>
                     </li>
